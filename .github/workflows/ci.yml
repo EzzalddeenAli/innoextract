@@ -31,7 +31,7 @@ jobs:
 
     - name: Configure
       # إضافة -DCMAKE_BUILD_TYPE=Release للحصول على نسخة مُحسنة وجاهزة للإنتاج
-      run: cmake --version && cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release -Werror=dev -Werror=deprecated -DCONTINUOUS_INTEGRATION=1
+      run: cmake --version && cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release -DUSE_STATIC_LIBS=ON -Werror=dev -Werror=deprecated -DCONTINUOUS_INTEGRATION=1
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build
